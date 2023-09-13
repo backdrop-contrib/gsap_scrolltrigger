@@ -1,0 +1,8 @@
+{
+    "_config_name": "gsap_scrolltrigger.settings",
+    "gsap_scrolltrigger_pages": "",
+    "gsap_scrolltrigger_cdn": 1,
+    "gsap_scrolltrigger_jsmain": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js",
+    "gsap_scrolltrigger_jsst": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/ScrollTrigger.min.js",
+    "gsap_scrolltrigger_visibility": "0"
+}

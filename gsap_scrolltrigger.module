@@ -1,0 +1,99 @@
+<?php
+
+/**
+ * @file
+ * Backdrop integration with GSAP ScrollTrigger js API
+ *
+ */
+
+ define('GSAP_VENDOR_URL', 'https://greensocks.com');
+
+ /**
+ * Implements hook_config_info().
+ */
+function gsap_scrolltrigger_config_info() {
+    $prefixes['gsap_scrolltrigger.settings'] = array(
+      'label' => t('GSAP ScrollTrigger settings'),
+      'group' => t('Configuration'),
+    );
+    return $prefixes;
+  }
+
+   /**
+ * Implements hook_page_menu().
+ */
+function gsap_scrolltrigger_menu() {
+    $items = array();
+
+    $items['admin/config/development/gsap-scrolltrigger'] = array(
+      'title' => 'Administer GSAP ScrollTrigger settings',
+      'description' => 'Administer GSAP ScrollTrigger js animation settings',
+      'page callback' => 'backdrop_get_form',
+      'page arguments' => array('gsap_scrolltrigger_settings'),
+      'access arguments' => array('access gsap_scrolltrigger settings'),
+      'file' => 'gsap_scrolltrigger.admin.inc',
+      'type' => MENU_NORMAL_ITEM,
+    );
+
+    return $items;
+  }
+
+/**
+ * Implements hook_library_info().
+ */
+function gsap_scrolltrigger_library_info() {
+    $library['GSAP'] = array(
+      'title' => 'GSAP ScrollTrigger',
+      'website' => GSAP_VENDOR_URL,
+      'version' => '3.3.4',
+      'js' => array(
+          backdrop_get_path('module', 'gsap_scrolltrigger') => array(),
+        ),
+      );
+
+    return $library;
+  }
+
+
+
+  /**
+ * Implements hook_init().
+ */
+function gsap_scrolltrigger_init() {
+    $gsap_scrolltrigger_visibility = config_get('gsap_scrolltrigger.settings', 'gsap_scrolltrigger_visibility');
+    $gsap_scrolltrigger_pages = config_get('gsap_scrolltrigger.settings', 'gsap_scrolltrigger_pages');
+    $gsap_scrolltrigger_cdn = config_get('gsap_scrolltrigger.settings', 'gsap_scrolltrigger_cdn');
+    $gsap_scrolltrigger_jsmain = config_get('gsap_scrolltrigger.settings', 'gsap_scrolltrigger_jsmain');
+    $gsap_scrolltrigger_jsst = config_get('gsap_scrolltrigger.settings', 'gsap_scrolltrigger_jsst');
+
+    // Compare with the internal and path alias (if any).
+    $path = backdrop_get_path_alias($_GET['q']);
+
+    // if $gsap_scrolltrigger_visibility is 0, then except these pages.  if $gsap_scrolltrigger_pages is 1, then only these pages.
+    // if ($gsap_scrolltrigger_visibility == 0)
+    // {
+      // $page_match = backdrop_match_path($path, $gsap_scrolltrigger_pages);
+    // }
+    // else {
+      // $page_match = !backdrop_match_path($path, $gsap_scrolltrigger_pages);
+    // }
+  //
+//      if ($page_match > 0)
+    // {
+    // If we have a page match according to the admin settings, load up the GSP ScrollTrigger JS file.
+    backdrop_add_library('gsap_scrolltrigger', 'gsap_scrolltrigger', TRUE);
+
+    backdrop_add_js(backdrop_get_path('module', 'gsap_scrolltrigger') . '/js/gsap_ScrollTrigger.js', array('type' => 'file', 'scope' => 'footer', 'preprocess' => TRUE));
+
+      if ($gsap_scrolltrigger_cdn == 0)
+      {
+        backdrop_add_js(backdrop_get_path('module', 'gsap_scrolltrigger') . '/js/gsap_ScrollTrigger.js', array('type' => 'file', 'scope' => 'footer', 'preprocess' => TRUE));
+      }
+      else {
+        backdrop_add_js($gsap_scrolltrigger_jsmain, 'external');
+        backdrop_add_js($gsap_scrolltrigger_jsst, 'external');
+      }
+
+   //  }
+
+  }

@@ -1,0 +1,7 @@
+name = GSAP ScrollTrigger
+description = Intergrates GSAP ScollTrigger API to allow easy animations on page scroll
+backdrop = 1.x
+version = 1.x-1.x
+type = module
+
+configure = admin/config/development/gsap-scrolltrigger

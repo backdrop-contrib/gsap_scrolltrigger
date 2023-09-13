@@ -1,2 +1,37 @@
 # gsap_scrolltrigger
- Backdrop implementation of the GreenSock's ScrollTrigger Javascript API Library
+Backdrop implementation of the GreenSock's ScrollTrigger Javascript API Library
+
+Intergrates the GreenSock's ScrollTrigger Javascript api library to create jaw-dropping scroll-based animations with minimal code.
+Trigger anything scroll-related, even if it has nothing to do with animation.
+
+## Initial version
+This initial version only includes "show on scroll" which will fade in the content when it become visible on the screen.
+
+## Requirements:
+GreenSock ScrollTrigger api - v3.3.4 - Loaded from the CDN or you can change the URL to a later version.
+
+## Installation:
+Install this module using the official Backdrop CMS instructions at https://docs.backdropcms.org/documentation/extend-with-modules
+
+## Documentation:
+Simply add the CSS .showonscroll to your item and when it becomes visible on the screen it will fade in.
+
+## TODO - Add documentation
+Additional documentation is located in the Wiki: https://github.com/backdrop-contrib/gsap-scrolltrigger/wiki
+
+## Issues:
+Bugs and Feature requests should be reported in the Issue Queue: https://github.com/backdrop-contrib/gsap-scrolltrigger/issues
+
+## Current Maintainer(s):
+- [Steve Moorhouse (albanycomputers)] (https://github.com/albanycomputers)
+- Seeking additional maintainers.
+
+## Credits:
+
+## Sponsorship:
+ - [Albany Computer Services] (https://www.albany-computers.co.uk)
+ - [Albany Web Design] (https://www.albanywebdesign.co.uk)
+ - [Albany Hosting] (https://www.albany-hosting.co.uk)
+
+## License
+This project is GPL v2 software. See the LICENSE.txt file in this directory for complete text.
