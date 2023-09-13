@@ -14,9 +14,9 @@ GreenSock ScrollTrigger api - v3.3.4 - Loaded from the CDN or you can change the
 Install this module using the official Backdrop CMS instructions at https://docs.backdropcms.org/documentation/extend-with-modules
 
 ## Documentation:
-Simply add the CSS .showonscroll to your item and when it becomes visible on the screen it will fade in.
+Simply add the CSS .showonscroll to your element and when it becomes visible on the viewport it will fade in.
 
-add CSS to hide the element until it is visible on the screen
+add CSS to hide the element until it is visible on the viewport.
 ```
 .showonscroll {
     opacity: 0;
