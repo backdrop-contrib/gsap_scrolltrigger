@@ -16,13 +16,20 @@ Install this module using the official Backdrop CMS instructions at https://docs
 ## Documentation:
 Simply add the CSS .showonscroll to your item and when it becomes visible on the screen it will fade in.
 
+add CSS to hide the element until it is visible on the screen
+```
+.showonscroll {
+    opacity: 0;
+}
+```
+
 Official GreenSock ScrollTrigger Docs: https://greensock.com/docs/v3/Plugins/ScrollTrigger
 
 ## TODO - Add documentation
-Additional documentation is located in the Wiki: https://github.com/backdrop-contrib/gsap-scrolltrigger/wiki
+Additional documentation is located in the Wiki: https://github.com/backdrop-contrib/gsap_scrolltrigger/wiki
 
 ## Issues:
-Bugs and Feature requests should be reported in the Issue Queue: https://github.com/backdrop-contrib/gsap-scrolltrigger/issues
+Bugs and Feature requests should be reported in the Issue Queue: https://github.com/backdrop-contrib/gsap_scrolltrigger/issues
 
 ## Current Maintainer(s):
 - [Steve Moorhouse (albanycomputers)] (https://github.com/albanycomputers)
