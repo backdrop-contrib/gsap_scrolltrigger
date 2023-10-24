@@ -1,8 +1,8 @@
 # gsap_scrolltrigger
-Backdrop implementation of the GreenSock's ScrollTrigger Javascript API Library
+GSAP ScrollTrigger is a Javascript API Library which triggers events on anything scroll related.
 
-Intergrates the GreenSock's ScrollTrigger Javascript api library to create jaw-dropping scroll-based animations with minimal code.
-Trigger anything scroll-related, even if it has nothing to do with animation.
+This module intergrates the GreenSock's ScrollTrigger Javascript api library to create jaw-dropping scroll based animations with minimal code.
+Trigger anything scroll related, even if it has nothing to do with animation.
 
 ## Initial version
 This initial version only includes "show on scroll" which will fade in the content when it become visible on the screen.
